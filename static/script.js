@@ -1,5 +1,3 @@
-// static/script.js
-
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("student-form");
   const resultBox = document.getElementById("result");
@@ -25,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     resultBox.classList.remove("hidden");
   });
 
-  // ✅ 복사 버튼 기능
   document.querySelectorAll(".copy-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const targetId = btn.getAttribute("data-target");
