@@ -16,14 +16,26 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 이메일과 비밀번호를 동일한 학번 기반으로 생성
     const emailPrefix = `sang${studentId}`;
     const email = `${emailPrefix}@g.jbedu.kr`;
     const pw = emailPrefix;
 
-    // 결과 표시
     googleId.textContent = email;
     googlePw.textContent = pw;
     resultBox.classList.remove("hidden");
+  });
+
+  // ✅ 복사 버튼 기능
+  document.querySelectorAll(".copy-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-target");
+      const targetText = document.getElementById(targetId).textContent;
+
+      navigator.clipboard.writeText(targetText).then(() => {
+        alert("클립보드에 복사되었습니다: " + targetText);
+      }).catch(() => {
+        alert("복사에 실패했습니다. 수동으로 복사해주세요.");
+      });
+    });
   });
 });

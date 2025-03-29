@@ -1,33 +1,15 @@
-<!-- templates/index.html -->
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>상산고 학생 구글 계정 조회</title>
-  <link rel="stylesheet" href="static/styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>상산고 학생 구글 계정 조회</h1>
-    <form id="student-form">
-      <div class="form-group">
-        <label for="student-id">학번:</label>
-        <input type="text" id="student-id" name="student-id" required>
-      </div>
-      <div class="form-group">
-        <label for="student-name">이름:</label>
-        <input type="text" id="student-name" name="student-name" required>
-      </div>
-      <button type="submit">조회하기</button>
-    </form>
+<div id="result" class="hidden">
+  <h2>조회 결과</h2>
 
-    <div id="result" class="hidden">
-      <h2>조회 결과</h2>
-      <p><strong>구글 아이디:</strong> <span id="google-id"></span></p>
-      <p><strong>초기 비밀번호:</strong> <span id="google-pw"></span></p>
-    </div>
-  </div>
+  <p>
+    <strong>구글 아이디:</strong> 
+    <span id="google-id"></span>
+    <button type="button" class="copy-btn" data-target="google-id">복사</button>
+  </p>
 
-  <script src="static/script.js"></script>
-</body>
-</html>
+  <p>
+    <strong>초기 비밀번호:</strong> 
+    <span id="google-pw"></span>
+    <button type="button" class="copy-btn" data-target="google-pw">복사</button>
+  </p>
+</div>
