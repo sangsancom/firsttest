@@ -1,0 +1,91 @@
+/* static/styles.css */
+
+body {
+  margin: 0;
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  background-color: #ffeaf4;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #fff0f6;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h1 {
+  color: #d63384;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #b1005f;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ffb3d1;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 2px solid #ff66a3;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff66a3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #e05592;
+}
+
+#result {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #ffcce0;
+  text-align: left;
+}
+
+#result h2 {
+  color: #c2185b;
+  margin-bottom: 15px;
+}
+
+.hidden {
+  display: none;
+}
