@@ -6,35 +6,44 @@ document.addEventListener("DOMContentLoaded", function () {
   const googleId = document.getElementById("google-id");
   const googlePw = document.getElementById("google-pw");
 
+  // ✅ 학번-이름-구글계정 데이터를 저장한 객체
+  const studentData = {
+    "2023001": {
+      name: "홍길동",
+      email: "2023001hong@school.edu",
+      pw: "pw1234"
+    },
+    // 여기에 다른 학생들도 추가 가능
+    // "2023002": { name: "김영희", email: "...", pw: "..." }
+  };
+
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // 폼 제출 시 새로고침 방지
+    e.preventDefault();
 
     const studentId = document.getElementById("student-id").value.trim();
     const studentName = document.getElementById("student-name").value.trim();
 
-    // 여기서 입력값 확인
-    if (studentId === "" || studentName === "") {
+    // 유효성 검사
+    if (!studentId || !studentName) {
       alert("학번과 이름을 모두 입력해주세요.");
       return;
     }
 
-    // 👉 임시로 가짜 데이터 생성 (실제로는 서버에서 받아올 부분)
-    const fakeAccount = generateFakeAccount(studentId, studentName);
+    const student = studentData[studentId];
 
-    // 결과 표시
-    googleId.textContent = fakeAccount.id;
-    googlePw.textContent = fakeAccount.pw;
+    if (!student) {
+      alert("해당 학번의 정보가 없습니다.");
+      return;
+    }
+
+    if (student.name !== studentName) {
+      alert("이름이 일치하지 않습니다.");
+      return;
+    }
+
+    // 결과 출력
+    googleId.textContent = student.email;
+    googlePw.textContent = student.pw;
     resultBox.classList.remove("hidden");
   });
-
-  function generateFakeAccount(id, name) {
-    // 구글 아이디는 학번+이름 조합, 비밀번호는 예시로 랜덤 4자리 숫자 사용
-    const email = `${id}${name}@school.edu`.toLowerCase();
-    const pw = `pw${Math.floor(1000 + Math.random() * 9000)}`; // pw1234 형태
-
-    return {
-      id: email,
-      pw: pw
-    };
-  }
 });
