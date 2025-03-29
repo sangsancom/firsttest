@@ -16,9 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // 학번 기반 고정 이메일/비밀번호 생성
-    const email = `sang${studentId}@g.jbedu.kr`;
-    const pw = `sang${studentId}`;
+    // 이메일과 비밀번호를 동일한 학번 기반으로 생성
+    const emailPrefix = `sang${studentId}`;
+    const email = `${emailPrefix}@g.jbedu.kr`;
+    const pw = emailPrefix;
 
     // 결과 표시
     googleId.textContent = email;
